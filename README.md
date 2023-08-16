@@ -30,7 +30,7 @@ Available features include:
 
 
 ## Requirements
-1. Flutterwave for business v3 [API keys](https://developer.flutterwave.com/docs/integration-guides/authentication)
+1. Flutterwave for business V3 [API keys](https://developer.flutterwave.com/docs/integration-guides/authentication)
 2. Vue version = 2.x.x
 
 
@@ -51,7 +51,7 @@ $ yarn  add  flutterwave-vue-v3
 
 2. Add the Flutterwave plugin to your app passing in your Flutterwave Public Key (optional)
 
-> Note 💡: For Typescript project sample, please see the project in the example directory of the project repository.
+> Note 💡: For a Typescript project sample, please see the project in the example directory of the project repository.
 
 If Public key is not added you will have to pass in the public_key parameter to the provided payment component button  and payment function
 
@@ -93,6 +93,7 @@ new Vue({
 | callback (function)  | False  | This is the function that runs after payment is completed  |
 | onclose (function)  | False  | This is the function that runs after payment modal is closed  |
 
+
 Methods provided by Flutterwave plugin and descriptions:
 
 | Method Name  | Parameters  | Returns |Description |
@@ -109,7 +110,7 @@ For authorization and validation error responses, double-check your API keys and
 
 
 ## Support
-For additional assistance using this library, please create an issue on the Github repo or contact the developer experience (DX) team via [email](mailto:developers@flutterwavego.com) or on [slack](https://bit.ly/34Vkzcg).
+For additional assistance using this library, please create an issue on the Github repo or contact the developer experience (DX) team via [email](mailto:developers@flutterwavego.com) or on [Slack](https://bit.ly/34Vkzcg).
 
 You can also follow us [@FlutterwaveEng](https://twitter.com/FlutterwaveEng) and let us know what you think 😊.
 

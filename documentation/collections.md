@@ -22,7 +22,7 @@ This section describes how you can utilize the in-built Flutterwave component to
 
 ```html
 <!--
-Method 1: Pass  in payment parameters individually as component attributes
+Method 1: Pass in payment parameters individually as component attributes
 -->
 
 <template>
@@ -40,9 +40,9 @@ Method 1: Pass  in payment parameters individually as component attributes
         consumer_mac: 'kjs9s8ss7dd'
       }"
       :customer="{
-        name: 'Demo Customer  Name',
-        email: 'customer@mail.com', 
-        phone_number: '0818450****'
+        name: 'Flutterwave Developers',
+        email: 'developers@flutterwavego.com',
+        phone_number: '09012345678'
       }"
       :customizations="{
         title: 'Customization Title',
@@ -51,7 +51,9 @@ Method 1: Pass  in payment parameters individually as component attributes
       }"
       :callback="makePaymentCallback"
       :onclose="closedPaymentModal"
-    > Click To Pay </flutterwave-pay-button>
+    >
+      Click To Pay
+    </flutterwave-pay-button>
   </div>
 </template>
 
@@ -82,12 +84,12 @@ export default {
 
 ```html
 <!--
-Method 2: Pass  in payment parameters as object to v-bind
+Method 2: Pass in payment parameters as object to v-bind
 -->
 
 <template>
   <div>
-    <flutterwave-pay-button   v-bind="paymentData" >Click To Pay</flutterwave-pay-button>
+    <flutterwave-pay-button v-bind="paymentData">Click To Pay</flutterwave-pay-button>
  </div>
 </template>
 
@@ -107,10 +109,10 @@ export default {
           consumer_mac: "kjs9s8ss7dd"
         },
         customer: {
-          name: "Demo Customer  Name",
-          email: "customer@mail.com",
-          phone_number: "0818450***44"
-        } ,
+          name: "Flutterwave Developers",
+          email: "developers@flutterwavego.com",
+          phone_number: "09012345678"
+        },
         customizations: {
           title: "Customization Title",
           description: "Customization Description",
@@ -120,7 +122,7 @@ export default {
         onclose: this.closedPaymentModal
       }
     }
-  } ,
+  },
   methods: {
     makePaymentCallback(response) {
       console.log("Pay", response);
@@ -172,10 +174,10 @@ export default {
           consumer_mac: "kjs9s8ss7dd"
         },
         customer: {
-          name: "Demo Customer  Name",
-          email: "customer@mail.com",
-          phone_number: "081845***044"
-        } ,
+          name: "Flutterwave Developers",
+          email: "developers@flutterwavego.com",
+          phone_number: "09012345678"
+        },
         customizations: {
           title: "Customization Title",
           description: "Customization Description",
@@ -185,11 +187,11 @@ export default {
         onclose: this.closedPaymentModal
       }
     }
-  } ,
+  },
   methods: {
     payViaService() {
       this.$payWithFlutterwave(this.paymentData);
-    } ,
+    },
     makePaymentCallback(response) {
       console.log("Pay", response);
     },
@@ -235,9 +237,9 @@ export default {
           consumer_mac: "kjs9s8ss7dd"
         },
         customer: {
-          name: "Demo Customer  Name",
-          email: "customer@mail.com",
-          phone_number: "081845***044"
+          name: "Flutterwave Developers",
+          email: "developers@flutterwavego.com",
+          phone_number: "09012345678"
         },
         customizations: {
           title: "Customization Title",
@@ -278,7 +280,6 @@ This section describes how you can optionally specify an action that runs when t
 
 ```html
 <template>
-
   <div>
     <flutterwave-pay-button
       :tx_ref="generateReference()"
@@ -293,13 +294,13 @@ This section describes how you can optionally specify an action that runs when t
         consumer_mac: 'kjs9s8ss7dd'
       }"
       :customer="{
-        name: 'Demo Customer  Name',
-        email: 'customer@mail.com', 
-        phone_number: '0818450****'
+        name: 'Flutterwave Developers',
+        email: 'developers@flutterwavego.com',
+        phone_number: '09012345678'
       }"
       :customizations="{
         title: 'Customization Title',
-        description: 'Customization Description'  ,
+        description: 'Customization Description',
         logo : 'https://flutterwave.com/images/logo-colored.svg'
       }"
       :callback="makePaymentCallback"
