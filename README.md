@@ -73,7 +73,7 @@ new Vue({
 
 ## Usage
 1. [Collections](documentation/collections.md)
-2. [Recurring Payments](documentation/recurringPaymments.md)
+2. [Recurring Payments](documentation/recurringPayments.md)
 3. [Split payments](documentation/splitPayments.md)
 
 ## Payment option parameters and descriptions
