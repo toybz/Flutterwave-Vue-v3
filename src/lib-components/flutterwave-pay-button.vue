@@ -1,99 +1,84 @@
-<script>
-export default {
-  name: "FlutterwavePayButton" ,
+<script lang="ts">
+import Vue from 'vue';
+
+export default Vue.extend({
+  name: 'FlutterwavePayButton',
   props: {
     public_key: {
       type: String,
     },
     tx_ref: {
-      type: [String, Number]
+      type: String,
+      required: true,
     },
     amount: {
       type: [String, Number],
-      required: true
+      required: true,
     },
     currency: {
       type: String,
-      default: 'NGN'
-    },
-    country: {
-      type: String,
-      default: 'NG'
     },
     payment_options: {
-      type: String
-    },
-    payment_plan: {
-      type: [String, Number]
-    },
-    subaccounts: {
-      type: null
-    },
-    integrity_hash: {
-      type: null
+      type: String,
     },
     redirect_url: {
-      type: String
+      type: String,
     },
     meta: {
-      type: Object
-    },
-    authorization: {
-      type: null
+      type: Object,
     },
     customer: {
-      type: Object
+      type: Object,
+      required: true,
     },
     customizations: {
-      type: Object
-    }
-    ,
-    callback: {
-      type: Function
+      type: Object,
     },
-
+    payment_plan: {
+      type: [String, Number],
+    },
+    subaccounts: {
+      type: Array,
+    },
+    callback: {
+      type: Function,
+    },
     onclose: {
-      type: Function
-    }
-
+      type: Function,
+    },
   },
+
   methods: {
-
-    showPaymentModal(){
-
-      let paymentParams = {
-        public_key: this.public_key,
+    showPaymentModal(): void {
+      const paymentParams: {
+        [key:string]: unknown
+      } = {
         tx_ref: this.tx_ref,
         amount: this.amount,
         currency: this.currency,
-        country: this.country,
         payment_options: this.payment_options,
-        payment_plan: this.payment_plan,
-        subaccounts: this.subaccounts,
-        integrity_hash: this.integrity_hash,
         redirect_url: this.redirect_url,
         meta: this.meta,
-        authorization: this.authorization,
         customer: this.customer,
         customizations: this.customizations,
-        callback: (response) => this.callback(response),
+        payment_plan: this.payment_plan,
+        subaccounts: this.subaccounts,
+        callback: (response: unknown) => this.callback(response),
         onclose: () => this.onclose(),
+      };
 
+      if (this.public_key) {
+        paymentParams.public_key = this.public_key;
       }
 
-      this.payWithFlutterwave(paymentParams)
-
-    }
-
-  }
-}
+      this.$payWithFlutterwave(paymentParams);
+    },
+  },
+});
 </script>
 
 <template>
-
   <button @click="showPaymentModal">
     <slot></slot>
   </button>
-
 </template>
-
