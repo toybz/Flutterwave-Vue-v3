@@ -9,7 +9,7 @@ We recommend reading the [main readme](/README.md) first, to understand the requ
 Also, this page simply provides a sample for initiating a split payment when collecting payments from your users. If you would like to view the general steps to generate a payment modal to collect payments from your users, you can refer to the [collections guide](documentation/collections.md).
 
 
-## Using subaccounts
+## Utilizing subaccounts
 
 This describes how to split payments collected from your users. You can choose to either use the split values initially specified when creating the split payment, or you can override the values, and specify new split values for each individual transaction:
 1. [Using the defaults](#using-the-defaults)
@@ -95,7 +95,7 @@ export default {
         currency: "NGN",
         subaccounts: [
           {
-            id: "RS_A8EB7D4D9C66C0B1C75014EE67D4D663",
+            id: "RS_FB312AA6C2C84A13421F3079E714F2CB",
             // If you want a commission of 20% 0f the settled amount
             // Subaccount gets: (1000 - 14) * 0.8 = 788.8
             // You get: (1000 - 14) * 0.2 = 197.2
@@ -111,7 +111,7 @@ export default {
             transaction_charge: 150,
           },
           {
-            id: "RS_A8EB7D4D9C66C0B1C75014EE67D4D663",
+            id: "RS_235E8F4E92A4048B57EA29B0E1B8F78B",
             // If you want the subaccount to get 600 naira only
             // Subaccount gets: 600
             // You get: 1000 - 600 - 14 = 386
